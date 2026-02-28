@@ -83,3 +83,4 @@ For LARGE tasks (new features, multi-file apps):
    `sh ~/Projects/AI_Workflow_Templates/agent_sprint.sh &`
 3. Monitor the process. Once complete, read `qa_report.md` and summarize the results.
 4. NEVER run `agent_sprint.sh` without first writing `architecture_plan.md`.
+
