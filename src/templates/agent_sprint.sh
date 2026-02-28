@@ -38,8 +38,8 @@ mkdir -p .claude
 cp "$WORKER_CONFIG" .claude/settings.json
 
 # Launching Claude Code to read the plan and execute it
-# Assuming `claude` is the CLI command installed via npm
-claude --dangerously-skip-permissions --print "Read $PLAN_FILE and execute all steps under Execution Steps. STOP after tool usage and await feedback. Do not proceed to verification."
+# DOCKER SANDBOX MODE: The worker runs inside an isolated MicroVM to protect the host OS.
+docker sandbox run claude -- "--dangerously-skip-permissions --print \"Read $PLAN_FILE and execute all steps under Execution Steps. STOP after tool usage and await feedback. Do not proceed to verification.\""
 
 # ------------------------------------------------------------------------------
 # Phase 2: The QA/Tester Agent (Verification)
