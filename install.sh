@@ -36,8 +36,17 @@ create_symlink "$REPO_DIR/src/templates/claude_glm47_worker.json" "$TEMPLATE_DIR
 create_symlink "$REPO_DIR/src/templates/claude_glm47_qa.json" "$TEMPLATE_DIR/claude_glm47_qa.json"
 create_symlink "$REPO_DIR/src/templates/agent_sprint.sh" "$TEMPLATE_DIR/agent_sprint.sh"
 
+# 3. Link v2.0 Prompt Files (system-prompt-file format)
+create_symlink "$REPO_DIR/src/templates/claude_glm47_worker_prompt.md" "$TEMPLATE_DIR/claude_glm47_worker_prompt.md"
+create_symlink "$REPO_DIR/src/templates/claude_glm47_qa_prompt.md" "$TEMPLATE_DIR/claude_glm47_qa_prompt.md"
+
+# 4. Link GEMINI.md to ~/.gemini/
+mkdir -p "$HOME/.gemini"
+create_symlink "$REPO_DIR/GEMINI.md" "$HOME/.gemini/GEMINI.md"
+
 # Make sure agent_sprint is executable
 chmod +x "$REPO_DIR/src/templates/agent_sprint.sh"
+
 
 echo ""
 echo "🎉 Installation Complete!"
